@@ -41,4 +41,4 @@ docker run --rm -p 8811:8811 -e PORT=8811 kyleemail/websocket-server
 
 Download [example.htm](./example.htm) and open it in your local browser. It connects to the server on localhost:7777 and displays any messages:
 
-![Example.htm in a browser](./example run.gif)
+![example browser run](example%20run.gif)
