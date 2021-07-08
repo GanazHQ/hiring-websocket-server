@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Example Websocket Connection</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <p>Raw messages below:</p>
+    <div id="messages"></div>
+    <script>
+        // Create WebSocket connection.
+        const socket = new WebSocket('ws://localhost:7777');
+
+        // Connection statues
+        socket.addEventListener('open', function (event) {
+            console.log("websocket connected!")
+        });
+        socket.addEventListener('error', function (event) {
+            console.error("websocket errored!", event)
+        });
+        socket.addEventListener('close', function (event) {
+            console.log("websocket closed!")
+        });
+
+        // Listen for messages
+        socket.addEventListener('message', function (event) {
+            console.log('Message from server ', event.data);
+            const container = document.querySelector("#messages");
+            const p = document.createElement("p");
+            p.append(event.data)
+            container.append(p);
+        });
+    </script>
+</body>
+</html>
