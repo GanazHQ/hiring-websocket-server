@@ -13,7 +13,7 @@ type CustomerCall = {
   state: string;
   phone_number: string;
   
-  // 1 - 100, with 100 being the most important
+  // bigger numbers are higher priority than lower numbers
   priority: number;
   
   // ISO 8601 format
